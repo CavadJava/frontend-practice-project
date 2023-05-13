@@ -21,3 +21,8 @@ nav ul {
 nav li {
     padding-left: 15px;
 }
+
+/* step 5*/
+nav a {
+    text-decoration: none;
+}
