@@ -3,3 +3,10 @@ nav {
     display: flex;
     justify-content: space-between;
 }
+
+/* step 2*/
+nav h1 {
+    color:blueviolet;
+    margin:0;
+    font: size 40px;
+}
