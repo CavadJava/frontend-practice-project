@@ -16,3 +16,8 @@ nav ul {
     display: inline-flex;
     list-style-type: none;
 }
+
+/* step 4*/
+nav li {
+    padding-left: 15px;
+}
