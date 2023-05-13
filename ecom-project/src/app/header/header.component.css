@@ -10,3 +10,9 @@ nav h1 {
     margin:0;
     font: size 40px;
 }
+
+/* step 3*/
+nav ul {
+    display: inline-flex;
+    list-style-type: none;
+}
