@@ -26,3 +26,23 @@ nav li {
 nav a {
     text-decoration: none;
 }
+
+/* step 6*/
+nav .nav-search input {
+
+    /* todo */
+    flex:1px;
+
+    height: 35px;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    border-right: 0px;
+}
+
+nav .nav-search button {
+
+    height: 40px;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    border-left: 0px;
+}
