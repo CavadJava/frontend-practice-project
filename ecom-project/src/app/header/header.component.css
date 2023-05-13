@@ -27,6 +27,16 @@ nav a {
     text-decoration: none;
 }
 
+/* step 7*/
+nav .nav-search {
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 /* step 6*/
 nav .nav-search input {
 
