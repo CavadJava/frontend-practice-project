@@ -4,3 +4,19 @@ body {
 .container {
     margin: 5% 5%
 }
+
+.common-form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    width: 300px;
+}
+
+.form-input {
+
+}
+
+.form-button {
+
+}

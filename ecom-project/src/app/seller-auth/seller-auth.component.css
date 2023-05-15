@@ -1,0 +1,43 @@
+
+.common-form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    width: 300px;
+}
+
+.common-form {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+
+.form-input {
+
+    height: 35px;
+    margin-bottom: 23px;
+    padding-left: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+.form-button {
+
+    height: 35px;
+    margin-bottom: 23px;
+    padding-left: 10px;
+    border: 3px solid black;
+    cursor: pointer;
+
+}
+
+.sign-up {
+    text-align: center;
+    color: blueviolet;
+    margin: 50px 80px;
+}
