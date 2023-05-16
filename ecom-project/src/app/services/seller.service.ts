@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,8 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class SellerService {
 
-  constructor() { }
-  userSignUp() {
+  constructor(private httpClient: HttpClient) { }
+  userSignUp(data: any) {
     console.warn('service called')
+    return this.httpClient.post('http://localhost:3000/seller',data)
   }
 }
