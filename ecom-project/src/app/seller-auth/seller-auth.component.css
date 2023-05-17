@@ -7,15 +7,6 @@
     width: 300px;
 }
 
-.common-form {
-    text-align: center;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    width: 300px;
-
-}
-
 
 .form-input {
 
@@ -36,8 +27,21 @@
 
 }
 
-.sign-up {
+.sign-up, .login {
     text-align: center;
-    color: blueviolet;
+    color: blue;
     margin: 50px 80px;
+}
+
+.sign-up h1, .login h1{
+    margin-top: 20px;
+    margin-bottom:80px
+}
+
+.auto-toggle-link {
+    margin-top: 18px;
+    color: blue;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
 }
