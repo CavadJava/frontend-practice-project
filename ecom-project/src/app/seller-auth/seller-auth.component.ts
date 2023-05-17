@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../services/seller.service';
 import { Router } from '@angular/router'
 import { SignUp } from '../model/data-type';
@@ -9,7 +9,7 @@ import { SignUp } from '../model/data-type';
 })
 export class SellerAuthComponent implements OnInit{
   constructor(private sellerService:SellerService, private router: Router){}
-  
+  showLogin = false;
   ngOnInit(): void {
     console.warn("auth-step1")
     this.sellerService.reloadSeller()
@@ -19,6 +19,13 @@ export class SellerAuthComponent implements OnInit{
     console.warn("auth-step2")
     console.warn(data)
     this.sellerService.userSignUp(data);
+  }
+
+  openLogin(): void {
+    this.showLogin = true;
+  }
+  openSignUp(): void {
+    this.showLogin = false;
   }
 
 }
