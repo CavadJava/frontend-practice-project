@@ -21,6 +21,11 @@ export class SellerAuthComponent implements OnInit{
     this.sellerService.userSignUp(data);
   }
 
+  login(data:any):void{
+    console.warn("auth-step3")
+    console.warn(data)
+  }
+
   openLogin(): void {
     this.showLogin = true;
   }
