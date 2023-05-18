@@ -37,7 +37,7 @@ export class SellerService {
           localStorage.setItem('seller', JSON.stringify(result.body))
           this.router.navigate(['seller-home'])
         } else {
-          console.log("login failed")
+          console.warn("login failed")
         }
       })
   }
