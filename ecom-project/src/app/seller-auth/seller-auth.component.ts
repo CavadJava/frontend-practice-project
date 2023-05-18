@@ -2,6 +2,7 @@
 import { SellerService } from '../services/seller.service';
 import { Router } from '@angular/router'
 import { SignUp } from '../model/SignUp';
+import { Login } from '../model/Login';
 @Component({
   selector: 'app-seller-auth',
   templateUrl: './seller-auth.component.html',
@@ -21,7 +22,7 @@ export class SellerAuthComponent implements OnInit{
     this.sellerService.userSignUp(data);
   }
 
-  login(data:any):void{
+  login(data:Login):void{
     console.warn("auth-step3")
     console.warn(data)
   }
