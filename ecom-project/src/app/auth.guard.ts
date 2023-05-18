@@ -20,7 +20,7 @@ export class authGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-      console.warn("guard-step2"+this.sellerService.isSellerLoggedIn.value)
+      console.warn("guard-step2"+this.sellerService.isSellerLoggedIn.value);
     return this.sellerService.isSellerLoggedIn;
   }
 }

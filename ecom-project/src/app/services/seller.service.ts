@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { Login } from '../model/Login';
 import { SignUp } from '../model/SignUp';
 
 @Injectable({
@@ -24,6 +25,23 @@ export class SellerService {
       });
 
   }
+
+  login(data: Login): void {
+    console.warn("auth-step3")
+    console.warn(data)
+    this.httpClient.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`
+      , { observe: 'response' }).subscribe((result: any) => {
+        console.log(result)
+        if (result && result.body && result.body.length > 0) {
+          console.log("user logged in")
+          localStorage.setItem('seller', JSON.stringify(result.body))
+          this.router.navigate(['seller-home'])
+        } else {
+          console.log("login failed")
+        }
+      })
+  }
+
   reloadSeller() {
     if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true)
