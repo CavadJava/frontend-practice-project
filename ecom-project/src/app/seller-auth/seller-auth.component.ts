@@ -23,29 +23,18 @@ export class SellerAuthComponent implements OnInit {
 
   login(data: Login): void {
     this.sellerService.userLogin(data)
-    // .subscribe((result: any) => {
-    //   console.log(result)
-    //   if (result && result.body && result.body.length>0) {
-    //     console.log("user logged in")
-    //     localStorage.setItem('seller', JSON.stringify(result.body))
-    //     this.router.navigate(['seller-home'])
-    //   } else {
-    //     console.warn("login failed")
-    //   }
-    // },
-    // (error)=>{
-    //   this.authError = "Email or password is not correct";
-    // }
-    // )
-    console.log("error:" + this.sellerService)
-    this.sellerService.isLoginError.subscribe(
-      (isError) => {
-        if (isError) {
-          this.authError = "Email or password is not correct";
-        }
+    .subscribe((result: any) => {
+      console.log(result)
+      if (result && result.body && result.body.length>0) {
+        console.log("user logged in")
+        localStorage.setItem('seller', JSON.stringify(result.body))
+        this.authError = "";
+        this.router.navigate(['seller-home'])
+      } else {
+        this.authError = "Email or password is not correct";
+        console.warn("login failed")
       }
-    )
-    // this.authError = "Email or password is not correct";
+    })
   }
   openLogin(): void {
     this.showLogin = true;

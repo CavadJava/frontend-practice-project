@@ -29,20 +29,11 @@ export class SellerService {
 
   }
 
-  userLogin(data: Login): void {
+  userLogin(data: Login): any {
     console.warn("auth-step3")
     console.warn(data)
-    this.httpClient.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`
-      , { observe: 'response' }).subscribe((result: any) => {
-        console.log(result)
-        if (result && result.body && result.body.length > 0) {
-          console.log("user logged in")
-          localStorage.setItem('seller', JSON.stringify(result.body))
-          this.router.navigate(['seller-home'])
-        } else {
-          console.warn("login failed")
-        }
-      })
+    return this.httpClient.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`
+      , { observe: 'response' });
   }
 
   reloadSeller() {

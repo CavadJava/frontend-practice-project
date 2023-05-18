@@ -12,7 +12,7 @@
 
     <div *ngIf="showLogin" class="login">
         <h1>Seller Login</h1>
-        <p>{{authError}}-----</p>
+        <p>{{authError}}</p>
         <form class="common-form" 
             #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)">
             <input
