@@ -14,18 +14,18 @@ export class SellerService {
   constructor(private httpClient: HttpClient, private router: Router) { }
   userSignUp(data: SignUp) {
     console.warn("seller-step1")
-    this.httpClient.post('http://localhost:3000/seller', data, { observe: 'response' })
+    this.httpClient.post('http://localhost:3000/seller',
+     data, { observe: 'response' })
       .subscribe((result) => {
-        this.isSellerLoggedIn.next(true);
-        localStorage.setItem('seller', JSON.stringify(result.body))
-        this.router.navigate(['seller-home'])
-
-        console.warn("result", result)
+        if (result) {
+          localStorage.setItem('seller', JSON.stringify(result.body))
+          this.router.navigate(['seller-home'])
+        }
       });
 
   }
   reloadSeller() {
-    if(localStorage.getItem('seller')){
+    if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true)
       this.router.navigate(['seller-home'])
     }
