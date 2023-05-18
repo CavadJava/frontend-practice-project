@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Login } from '../model/Login';
 import { SignUp } from '../model/SignUp';
 
@@ -12,11 +12,14 @@ export class SellerService {
 
   isSellerLoggedIn = new BehaviorSubject<boolean>(false);
 
+  @Output()
+  isLoginError = new EventEmitter<boolean>();
+
   constructor(private httpClient: HttpClient, private router: Router) { }
   userSignUp(data: SignUp) {
     console.warn("seller-step1")
     this.httpClient.post('http://localhost:3000/seller',
-     data, { observe: 'response' })
+      data, { observe: 'response' })
       .subscribe((result) => {
         if (result) {
           localStorage.setItem('seller', JSON.stringify(result.body))
@@ -26,7 +29,7 @@ export class SellerService {
 
   }
 
-  login(data: Login): void {
+  userLogin(data: Login): void {
     console.warn("auth-step3")
     console.warn(data)
     this.httpClient.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`
@@ -43,7 +46,7 @@ export class SellerService {
   }
 
   reloadSeller() {
-    if (localStorage.getItem('seller')) {
+    if (localStorage && localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true)
       this.router.navigate(['seller-home'])
     }

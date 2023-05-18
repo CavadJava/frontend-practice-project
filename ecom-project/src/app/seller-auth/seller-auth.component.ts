@@ -11,22 +11,43 @@ import { Login } from '../model/Login';
 })
 export class SellerAuthComponent implements OnInit {
   constructor(private sellerService: SellerService, private router: Router, private httpClient: HttpClient) { }
-  showLogin = false;
+  showLogin: boolean = false;
+  authError: string = '';
   ngOnInit(): void {
-    console.warn("auth-step1")
     this.sellerService.reloadSeller()
   }
 
   signUp(data: SignUp): void {
-    console.warn("auth-step2")
-    console.warn(data)
     this.sellerService.userSignUp(data);
   }
 
   login(data: Login): void {
-    this.sellerService.login(data)
+    this.sellerService.userLogin(data)
+    // .subscribe((result: any) => {
+    //   console.log(result)
+    //   if (result && result.body && result.body.length>0) {
+    //     console.log("user logged in")
+    //     localStorage.setItem('seller', JSON.stringify(result.body))
+    //     this.router.navigate(['seller-home'])
+    //   } else {
+    //     console.warn("login failed")
+    //   }
+    // },
+    // (error)=>{
+    //   this.authError = "Email or password is not correct";
+    // }
+    // )
+    console.log("error:" + this.sellerService)
+    this.sellerService.isLoginError.subscribe(
+      (isError) => {
+        if (isError) {
+          this.authError = "Email or password is not correct";
+        }
+      }
+    )
+    // this.authError = "Email or password is not correct";
   }
-   openLogin(): void {
+  openLogin(): void {
     this.showLogin = true;
   }
   openSignUp(): void {
