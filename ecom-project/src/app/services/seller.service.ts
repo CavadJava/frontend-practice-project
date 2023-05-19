@@ -24,6 +24,7 @@ export class SellerService {
         if (result) {
           localStorage.setItem('seller', JSON.stringify(result.body))
           this.router.navigate(['seller-home'])
+          this.isSellerLoggedIn.next(true)
         }
       });
 
