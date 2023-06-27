@@ -1,6 +1,6 @@
 <nav>
     <h1><a href="/">ECOMMERCE APPLICATION</a></h1>
-    <div class="nav-search">
+    <div *ngIf="menuType==='default'" class="nav-search">
         <input type="text" name="ecom_search_input">
         <button>Search</button>
     </div>
