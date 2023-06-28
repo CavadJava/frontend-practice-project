@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   menuType: string = 'default';
+  sellerName: string = '';
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -16,6 +17,11 @@ export class HeaderComponent implements OnInit{
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           console.log('in seller area')
           this.menuType = 'seller'
+          if(localStorage.getItem('seller')) {
+            let sellerStore = localStorage.getItem('seller');
+            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+            this.sellerName = sellerData.name
+          }
         } else {
           console.log('outside seller')
           this.menuType = 'default'
