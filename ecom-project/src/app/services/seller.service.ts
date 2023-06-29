@@ -23,7 +23,7 @@ export class SellerService {
       .subscribe((result) => {
         if (result) {
           localStorage.setItem('seller', JSON.stringify(result.body))
-          this.router.navigate(['/seller-home'])
+          this.router.navigate(['/'])
           this.isSellerLoggedIn.next(true)
         }
       });
@@ -40,7 +40,7 @@ export class SellerService {
   reloadSeller() {
     if (localStorage && localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true)
-      this.router.navigate(['/seller-home'])
+      this.router.navigate(['seller-home'])
     }
   }
 }

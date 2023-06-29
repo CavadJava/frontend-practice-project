@@ -29,7 +29,7 @@ export class SellerAuthComponent implements OnInit {
         console.log("user logged in")
         localStorage.setItem('seller', JSON.stringify(result.body))
         this.authError = "";
-        this.router.navigate(['/seller-home'])
+        this.router.navigate(['seller-home'])
       } else {
         this.authError = "Email or password is not correct";
         console.warn("login failed")
