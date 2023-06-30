@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../model/Product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -6,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller-add-product.component.css']
 })
 export class SellerAddProductComponent implements OnInit {
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
 
   }
 
-  submit(data:object) : void {
+  submit(data: Product) : void {
     console.warn(data)
+    this.productService.addProduct(data).subscribe(result=>{
+      if(result) {
+        console.warn(result)
+      }
+    })
   }  
 }
