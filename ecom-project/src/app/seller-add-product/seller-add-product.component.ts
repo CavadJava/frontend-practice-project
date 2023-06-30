@@ -8,6 +8,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./seller-add-product.component.css']
 })
 export class SellerAddProductComponent implements OnInit {
+  addProductMessage: String | undefined
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -18,8 +19,9 @@ export class SellerAddProductComponent implements OnInit {
     console.warn(data)
     this.productService.addProduct(data).subscribe(result=>{
       if(result) {
-        console.warn(result)
+        this.addProductMessage = "Product is successfully added";
       }
+      setTimeout(()=>{this.addProductMessage=undefined}, 3000)
     })
   }  
 }
