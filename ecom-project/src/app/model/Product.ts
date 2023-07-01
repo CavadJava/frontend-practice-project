@@ -1,7 +1,7 @@
 export interface Product {
     name: String,
     price: String,
-    categoru: String,
+    category: String,
     color: String,
     description: String,
     image: String
