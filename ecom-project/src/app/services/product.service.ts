@@ -16,4 +16,7 @@ export class ProductService {
   getProductList() :Observable<Product[]> {
     return this.httpClient.get<Product[]>("http://localhost:3000/products");
   }
+  deleteProductById(id:number) {
+    return this.httpClient.delete(`http://localhost:3000/products/${id}`);
+  }
 }
