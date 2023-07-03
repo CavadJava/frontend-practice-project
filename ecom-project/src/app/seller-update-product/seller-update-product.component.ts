@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Product } from '../model/Product';
 
 @Component({
@@ -9,10 +9,12 @@ import { Product } from '../model/Product';
 })
 export class SellerUpdateProductComponent implements OnInit{
   updateProductMessage :String | undefined
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() : void {
+    let productId = this.route.snapshot.paramMap.get('id')
+    console.warn(productId)
 
   }
 
