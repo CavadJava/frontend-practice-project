@@ -22,4 +22,7 @@ export class ProductService {
   deleteProductById(id:number) {
     return this.httpClient.delete(`http://localhost:3000/products/${id}`);
   }
+  getProductById(id:string) {
+    return this.httpClient.get<Product>(`http://localhost:3000/products/${id}`);
+  }
 }
