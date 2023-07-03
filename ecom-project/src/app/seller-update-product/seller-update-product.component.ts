@@ -26,6 +26,14 @@ export class SellerUpdateProductComponent implements OnInit{
   }
 
   submit(data:Product) {
-    console.log("update product page");
+    if(this.productData) {
+      data.id = this.productData.id
+    }
+    this.productService.updateProduct(data).subscribe((result)=>{
+      if(result) {
+        this.updateProductMessage = "Product has updated"
+      }
+    })
+    console.log(data);
   }
 }
