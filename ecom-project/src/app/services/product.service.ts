@@ -13,6 +13,9 @@ export class ProductService {
   addProduct(data: Product) {
     return this.httpClient.post("http://localhost:3000/products",data)
   }
+  updateProduct(data: Product, id: number) {
+    return this.httpClient.put(`http://localhost:3000/products/${id}`,data)
+  }
   getProductList() :Observable<Product[]> {
     return this.httpClient.get<Product[]>("http://localhost:3000/products");
   }

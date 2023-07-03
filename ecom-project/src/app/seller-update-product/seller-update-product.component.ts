@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '../model/Product';
 
 @Component({
   selector: 'app-seller-update-product',
@@ -7,11 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./seller-update-product.component.css']
 })
 export class SellerUpdateProductComponent implements OnInit{
-
-  constructor(private router: Router) {
+  updateProductMessage :String | undefined
+  constructor() {
   }
 
   ngOnInit() : void {
 
+  }
+
+  submit(data:Product) {
+    console.log("update product page");
   }
 }
