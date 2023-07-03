@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Product } from '../model/Product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-seller-update-product',
@@ -8,13 +9,19 @@ import { Product } from '../model/Product';
   styleUrls: ['./seller-update-product.component.css']
 })
 export class SellerUpdateProductComponent implements OnInit{
+  productData: undefined | Product;
   updateProductMessage :String | undefined
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+    private productService: ProductService) {
   }
 
   ngOnInit() : void {
     let productId = this.route.snapshot.paramMap.get('id')
-    console.warn(productId)
+    console.warn(productId);
+    productId && this.productService.getProductById(productId).subscribe((result)=>{
+      console.warn(result);
+      this.productData = result;
+    })
 
   }
 
