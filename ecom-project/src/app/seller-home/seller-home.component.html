@@ -23,7 +23,8 @@
                 <td>{{item.color}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.description}}</td>
-                <td><button (click)="deleteProductById(item.id)">Delete</button></td>
+                <td><fa-icon (click)="deleteProductById(item.id)" [icon]="icon">
+                </fa-icon></td>
             </tr>
         </tbody>
     </table>
