@@ -1,0 +1,20 @@
+<p>Interest Picture application</p>
+
+<!-- upload picture -->
+<!-- preview picture -->
+<!-- add frame -->
+<!-- change background picture-->
+<div class="common-form">
+    <p class="p-message" style="color:green">{{message}}</p>
+
+    <input type="file" (change)="onSelectPicture($event)" />
+    
+    Width:<input type="text" [(ngModel)]="width"  name="min-width">
+    
+    Height:<input type="text" [(ngModel)]="height" name="min-height">
+    
+    <p>
+        <!-- {{width}} - {{height}} -->
+    <img [src]="url" [width]="width" [height]="height"/>
+
+</div>

@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
 import { EntertainmentsComponent } from './entertainments/entertainments.component';
+import { InterestPictureComponent } from './entertainments/interest-picture/interest-picture.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EntertainmentsComponent } from './entertainments/entertainments.compone
     SellerHomeComponent,
     SellerUpdateProductComponent,
     TokenParsingComponent,
-    EntertainmentsComponent
+    EntertainmentsComponent,
+    InterestPictureComponent
   ],
   imports: [
     BrowserModule,

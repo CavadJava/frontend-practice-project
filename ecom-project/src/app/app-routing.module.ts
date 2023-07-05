@@ -8,6 +8,7 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
 import { EntertainmentsComponent } from './entertainments/entertainments.component';
+import { InterestPictureComponent } from './entertainments/interest-picture/interest-picture.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     component: EntertainmentsComponent,
     path: 'entertainments'
+  },
+  {
+    component: InterestPictureComponent,
+    path: 'interest-picture'
   },
   {
     component: TokenParsingComponent,
