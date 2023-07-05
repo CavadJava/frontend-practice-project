@@ -1,0 +1,16 @@
+<p>TOKEN PARSING</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="text" formControlName="token" placeholder="Token: " class="form-input" />
+    </div>
+    <div>
+        <button class="button" type="submit">Parse</button>
+    </div>
+</form>
+
+<div class="result">
+    <p>
+        User info: {{ userInfo | json}}
+      </p>
+      <button class="button" routerLink="/entertainments">BACK TO ENTERTAINMENTS</button>
+</div>

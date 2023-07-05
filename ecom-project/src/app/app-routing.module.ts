@@ -6,6 +6,8 @@ import { SellerAddProductComponent } from './seller-add-product/seller-add-produ
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
+import { EntertainmentsComponent } from './entertainments/entertainments.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,14 @@ const routes: Routes = [
   {
     component: SellerAuthComponent,
     path: 'seller-auth'
+  },
+  {
+    component: EntertainmentsComponent,
+    path: 'entertainments'
+  },
+  {
+    component: TokenParsingComponent,
+    path: 'token-parsing'
   },
   {
     component: SellerHomeComponent,

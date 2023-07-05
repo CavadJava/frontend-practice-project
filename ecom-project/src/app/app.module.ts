@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { SellerAddProductComponent } from './seller-add-product/seller-add-produ
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
+import { EntertainmentsComponent } from './entertainments/entertainments.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     SellerAuthComponent,
     SellerAddProductComponent,
     SellerHomeComponent,
-    SellerUpdateProductComponent
+    SellerUpdateProductComponent,
+    TokenParsingComponent,
+    EntertainmentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule
   ],
