@@ -15,6 +15,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
 import { EntertainmentsComponent } from './entertainments/entertainments.component';
 import { InterestPictureComponent } from './entertainments/interest-picture/interest-picture.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InterestPictureComponent } from './entertainments/interest-picture/inte
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
