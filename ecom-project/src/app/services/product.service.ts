@@ -25,4 +25,7 @@ export class ProductService {
   getProductById(id:string) {
     return this.httpClient.get<Product>(`http://localhost:3000/products/${id}`);
   }
+  popularProducts(){
+    return this.httpClient.get<Product[]>("http://localhost:3000/products"); 
+  }
 }
