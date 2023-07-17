@@ -1,0 +1,8 @@
+<div class="add-movie">
+    <p class="message-p">{{movieMessage}}</p>
+    <a routerLink="/entertainments/movies/">Movies List</a>
+    <form class="common-form" (ngSubmit)="submit(addMovie.value)" #addMovie="ngForm">
+        <input type="text" ngModel name="name" placeholder="Enter Name" class="form-input"/>
+        <button type="submit">Add Movie</button>
+    </form>
+</div>

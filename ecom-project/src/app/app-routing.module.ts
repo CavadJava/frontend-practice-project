@@ -9,6 +9,8 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { TokenParsingComponent } from './entertainments/token-parsing/token-parsing.component';
 import { EntertainmentsComponent } from './entertainments/entertainments.component';
 import { InterestPictureComponent } from './entertainments/interest-picture/interest-picture.component';
+import { MovieListComponent } from './entertainments/movies/movie-list/movie-list.component';
+import { MovieAddComponent } from './entertainments/movies/movie-add/movie-add.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,16 @@ const routes: Routes = [
   {
     component: SellerUpdateProductComponent,
     path: 'seller-update-product/:id',
+    canActivate: [authGuard]
+  },
+  {
+    component: MovieListComponent,
+    path: 'entertainments/movies',
+    canActivate: [authGuard]
+  },
+  {
+    component: MovieAddComponent,
+    path: 'entertainments/movies/movie-add',
     canActivate: [authGuard]
   }
 ];

@@ -1,0 +1,30 @@
+<div class="movie-list">
+    <h4>Movies List</h4>
+    <p class="message-p"></p>
+    <a routerLink="/entertainments/movies/movie-add/">Movie Add</a>
+    <p></p>
+    <div class="add-movie">
+        <p class="message-p">{{movieMessage}}</p>
+        <form class="common-form" (ngSubmit)="submit(addMovie.value)" #addMovie="ngForm">
+            <input type="text" ngModel name="name" placeholder="Enter Name" class="form-input"/>
+            <button type="submit">Add Movie</button>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of movies">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <a (click)="removeMovie(item)">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

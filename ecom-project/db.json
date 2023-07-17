@@ -24,6 +24,71 @@
       "id": 1
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "name": "test",
+      "price": "iu",
+      "color": "u",
+      "category": "u",
+      "description": "uu",
+      "image": "https://thumbnail.imgbin.com/23/2/25/imgbin-bob-the-minion-youtube-kevin-the-minion-stuart-the-minion-youtube-MmQ3Sfz3ajeET95prjraNcS18_t.jpg",
+      "id": 1
+    },
+    {
+      "name": "67",
+      "price": "6767",
+      "color": "t",
+      "category": "t6767t",
+      "description": "uut67",
+      "image": "https://img.favpng.com/20/17/8/stuart-the-minion-minions-computer-icons-youtube-clip-art-png-favpng-kQB9SeLagbAQcUsNLKMuy7ngS.jpg",
+      "id": 2
+    },
+    {
+      "name": "ij",
+      "price": "6767",
+      "color": "joio",
+      "category": "i",
+      "description": "uut67u889",
+      "image": "https://img.favpng.com/13/2/2/kevin-the-minion-stuart-the-minion-bob-the-minion-computer-icons-png-favpng-rjAqfhyYRhFHpSRZ8bR6yCMqE.jpg",
+      "id": 3
+    },
+    {
+      "name": "238823237",
+      "price": "8978",
+      "color": "978",
+      "category": "878",
+      "description": "uut67u8897",
+      "image": "https://img.favpng.com/12/12/12/bob-the-minion-despicable-me-minion-rush-minions-desktop-wallpaper-png-favpng-RDKECgHZacy7K4NXrGACsWJ46.jpg",
+      "id": 4
+    },
+    {
+      "name": "23982389u2389u3298udijas",
+      "price": "89",
+      "color": "98u",
+      "category": "89u98u",
+      "description": "uut67u8897u8",
+      "image": "https://img.favpng.com/14/17/19/despicable-me-minion-rush-agnes-bob-the-minion-minions-clip-art-png-favpng-QxB7whN9Pbn1Tn3Ccjj58faAd.jpg",
+      "id": 5
+    },
+    {
+      "name": "sdhadsjkhdkjh",
+      "price": "uhih",
+      "color": "uhiu",
+      "category": "huijhk",
+      "description": "uut67u8897u8jkh",
+      "image": "https://i.pinimg.com/474x/c8/22/a8/c822a80cba3a5c4b716c716b23dff151.jpg",
+      "id": 6
+    },
+    {
+      "name": "aksiuu",
+      "price": "iuh",
+      "color": "iuhhu",
+      "category": "hu",
+      "description": "huuh",
+      "image": "23",
+      "id": 7
+    }
+  ],
+  "movies": [],
   "users": []
 }

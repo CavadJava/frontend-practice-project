@@ -16,6 +16,8 @@ import { TokenParsingComponent } from './entertainments/token-parsing/token-pars
 import { EntertainmentsComponent } from './entertainments/entertainments.component';
 import { InterestPictureComponent } from './entertainments/interest-picture/interest-picture.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MovieListComponent } from './entertainments/movies/movie-list/movie-list.component';
+import { MovieAddComponent } from './entertainments/movies/movie-add/movie-add.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SellerUpdateProductComponent,
     TokenParsingComponent,
     EntertainmentsComponent,
-    InterestPictureComponent
+    InterestPictureComponent,
+    MovieListComponent,
+    MovieAddComponent
   ],
   imports: [
     BrowserModule,
