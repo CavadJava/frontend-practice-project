@@ -12,22 +12,24 @@
 
 <div class="product-list-wrapper">
 	<h1>Trendy Products</h1>
-	<div class="col-sm-3">
-		<div class="product-item">
-			<img src="https://thumbnail.imgbin.com/23/2/25/imgbin-bob-the-minion-youtube-kevin-the-minion-stuart-the-minion-youtube-MmQ3Sfz3ajeET95prjraNcS18_t.jpg"/>
-		</div>
-		<div class="product-details">
-			<h6 class="name-head">New Apple Mobile</h6>
-			<div class="product-price">
-				<h6>Price: 10000</h6>
+	<div class="row">
+		<div class="col-sm-3" *ngFor="let item of trendyProducts">
+			<div class="product-item">
+				<img src="{{item.image}}"/>
 			</div>
-			<div class="product-color">
-				<h6>Color: blue</h6>
+			<div class="product-details">
+				<h6 class="name-head">New Apple Mobile</h6>
+				<div class="product-price">
+					<h6>Price: 10000</h6>
+				</div>
+				<div class="product-color">
+					<h6>Color: blue</h6>
+				</div>
 			</div>
-		</div>
-		<div class="product-footer">
-			<a href="">View Details</a>-
-			<a href="">Add to Cart</a>
+			<div class="product-footer">
+				<a href="">View Details</a>-
+				<a href="">Add to Cart</a>
+			</div>
 		</div>
 	</div>
 </div>
