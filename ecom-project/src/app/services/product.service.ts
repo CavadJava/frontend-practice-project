@@ -26,6 +26,9 @@ export class ProductService {
     return this.httpClient.get<Product>(`http://localhost:3000/products/${id}`);
   }
   popularProducts(){
-    return this.httpClient.get<Product[]>("http://localhost:3000/products"); 
+    return this.httpClient.get<Product[]>("http://localhost:3000/products?_limit=3"); 
+  }
+  trendyProducts(){
+    return this.httpClient.get<Product[]>("http://localhost:3000/products?_limit=8"); 
   }
 }
