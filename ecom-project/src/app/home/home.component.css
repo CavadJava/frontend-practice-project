@@ -41,6 +41,6 @@
 
 .product-footer {
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 0px;
 }
