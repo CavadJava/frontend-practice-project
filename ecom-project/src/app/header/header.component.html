@@ -3,7 +3,15 @@
     <div *ngIf="menuType==='default'" class="nav-search">
         <input type="text" (keyup)="searchProducts($event)" name="ecom_search_input">
         <button>Search</button>
+
+    
+        <ul class="suggested-result">
+            <li *ngFor="let item of searchResult">
+                <a>{{item.name}}</a>
+            </li>
+        </ul>
     </div>
+
     <div [ngSwitch]="menuType">
         <ul *ngSwitchCase="'default'">
             <li><a routerLink="seller-auth">Seller</a></li>

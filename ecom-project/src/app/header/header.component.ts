@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
+import { Product } from '../model/Product';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit{
   menuType: string = 'default';
   sellerName: string = '';
-  constructor(private router: Router) { }
+  searchResult: undefined | Product[];
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((val:any) => {
@@ -37,7 +40,10 @@ export class HeaderComponent implements OnInit{
   searchProducts(query: KeyboardEvent){
     if(query) {
       const element = query.target as HTMLInputElement
-      console.log(element.value)
+      this.productService.searchProducts(element.value).subscribe((result)=>{
+        this.searchResult = result;
+        console.log(result)
+      })
     }
   }
 
