@@ -34,5 +34,12 @@ export class HeaderComponent implements OnInit{
     this.router.navigate(['/seller-auth'])
   }
 
+  searchProducts(query: KeyboardEvent){
+    if(query) {
+      const element = query.target as HTMLInputElement
+      console.log(element.value)
+    }
+  }
+
 
 }

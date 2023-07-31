@@ -1,7 +1,7 @@
 <nav>
     <h1><a routerLink="/">ECOMMERCE APPLICATION</a></h1>
     <div *ngIf="menuType==='default'" class="nav-search">
-        <input type="text" name="ecom_search_input">
+        <input type="text" (keyup)="searchProducts($event)" name="ecom_search_input">
         <button>Search</button>
     </div>
     <div [ngSwitch]="menuType">
