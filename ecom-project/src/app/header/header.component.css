@@ -56,3 +56,28 @@ nav .nav-search button {
     border: 1px solid blueviolet;
     border-left: 0px;
 }
+h1 a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.suggested-result {
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: #fff;
+    width: 400px;
+    top: 150px;
+    border: 1px solid #fff;
+    color: blueviolet;
+}
+
+.suggested-result li {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+.suggested-result li a {
+    cursor: pointer;
+    color: blueviolet;
+}
