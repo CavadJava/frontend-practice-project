@@ -9,7 +9,19 @@ app.listen(3000)
 app.get("/", (req,resp)=>{
     resp.sendFile('./views/index.html',{root:__dirname});
 });
+
 app.get("/about", (req,resp)=>{
 // resp.send("<p>Hello javad, welcome to mean stack</p>");
 resp.sendFile('./views/about.html',{root:__dirname});
+});
+
+
+// redirects
+app.get("/about-me", (req,resp)=>{
+    resp.redirect("/about");
+});
+
+// 404 page
+app.use((req, resp)=>{
+    resp.sendFile("./views/404.html",{root:__dirname})
 });
