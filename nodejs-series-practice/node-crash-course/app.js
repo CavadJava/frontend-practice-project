@@ -20,6 +20,11 @@ app.get("/about", (req,resp)=>{
     resp.render("about")
 });
 
+app.get("/blogs/create", (req,resp)=>{
+    resp.render("create")
+})
+
+
 
 // redirects
 app.get("/about-me", (req,resp)=>{
