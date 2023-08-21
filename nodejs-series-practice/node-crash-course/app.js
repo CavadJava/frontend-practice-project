@@ -11,28 +11,33 @@ app.listen(3000)
 
 app.get("/", (req,resp)=>{
     // resp.sendFile('./old-views/index.html',{root:__dirname});
-    resp.render("index")
+    const blogs = [
+        // {title:'Title-1',snippet:'Mario1'},
+        // {title:'Title-2',snippet:'Mario2'},
+        // {title:'Title-3',snippet:'Mario3'}
+    ]
+    resp.render("index", {title : 'Home', blogs})
 });
 
 app.get("/about", (req,resp)=>{
 // resp.send("<p>Hello javad, welcome to mean stack</p>");
 // resp.sendFile('./old-views/about.html',{root:__dirname});
-    resp.render("about")
+    resp.render("about", {title : 'About'})
 });
 
 app.get("/blogs/create", (req,resp)=>{
-    resp.render("create")
+    resp.render("create", {title : 'Create a new blog'})
 })
 
 
 
 // redirects
 app.get("/about-me", (req,resp)=>{
-    resp.redirect("/about");
+    resp.redirect("/about")
 });
 
 // 404 page
 app.use((req, resp)=>{
-    resp.render("404");
+    resp.render("404", {title : '404'});
     // resp.sendFile("./old-views/404.html",{root:__dirname})
 });

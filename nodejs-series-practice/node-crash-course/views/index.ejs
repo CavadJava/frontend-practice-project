@@ -3,13 +3,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Node.js Crash Course </title>
+    <title>Blog Ninja | <%= title %> </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Home</h1>
+    <% const name='mario' %>
+    <h1>Home | <%=name %> </h1>
     <h2>Your path to becoming a Node.js ninja!</h2>
     <nav>
         <div class="site-title">
@@ -24,6 +25,14 @@
 
         <div class="blogs content">
             <h2>All Blogs</h2>
+            <% if (blogs.length>0) { %>
+                <% blogs.forEach(blog => { %>
+                    <h3 class="title"> <%= blog.title %> </h3>
+                    <p class="snippet"> <%= blog.snippet %> </p>
+                <% }) %>
+            <% } else {%>
+                There are no blogs in display
+            <% } %>
         </div>
     </nav>
 </body>
