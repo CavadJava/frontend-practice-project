@@ -19,9 +19,9 @@ app.use((req,resp,next) => {
 app.get("/", (req,resp)=>{
     // resp.sendFile('./old-views/index.html',{root:__dirname});
     const blogs = [
-        // {title:'Title-1',snippet:'Mario1'},
-        // {title:'Title-2',snippet:'Mario2'},
-        // {title:'Title-3',snippet:'Mario3'}
+        {title:'Yoshi finds eggs',snippet:'Lorem ipsum dolar sit amet consectetur'},
+        {title:'Mario finds eggs',snippet:'Lorem ipsum dolar sit amet consectetur'},
+        {title:'How to defeat browser',snippet:'Lorem ipsum dolar sit amet consectetur'}
     ]
     resp.render("index", {title : 'Home', blogs})
 });
