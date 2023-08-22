@@ -1,4 +1,7 @@
 const express = require('express')
+const fs = require('fs');
+const querystring = require('querystring');
+const url = require('url');
 
 const app = express();
 
@@ -25,6 +28,25 @@ app.get("/", (req,resp)=>{
     ]
     resp.render("index", {title : 'Home', blogs})
 });
+app.get('/list-users',(req,resp)=>{
+
+// let parsedUrl = url.parse(req.url);
+// let parsedQs = querystring.parse(parsedUrl.query);
+// console.log(parsedQs);
+
+    fs.readFile(__dirname+"/"+"users.json",(err,data)=>{
+        resp.header("Content-Type",'application/json');
+        console.log(req.query.name);
+
+        resp.end("Name:"+req.query.name+", Age:"+req.query.age);
+    })
+})
+app.get('/list-users/:name/:age',(req,resp)=>{
+    fs.readFile(__dirname+"/"+"users.json",(err,data)=>{
+        resp.header("Content-Type",'application/json');
+        resp.end("name:"+req.params.name+", age:"+req.params.age);
+    })
+})
 
 app.get("/about", (req,resp)=>{
 // resp.send("<p>Hello javad, welcome to mean stack</p>");
