@@ -1,10 +1,40 @@
 const express = require('express')
 const fs = require('fs');
 const querystring = require('querystring');
+const router = express.Router();
 const url = require('url');
 
 const app = express();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swaggerSpec');
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Define your API routes
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+// Define a simple route to get all tasks (To-Do items)
+app.get('/api/tasks', (req, res) => {
+    // Logic to get all tasks from your database or data source
+    const tasks = [
+      { id: 1, text: 'Buy groceries' },
+      { id: 2, text: 'Finish project' },
+    ];
+    res.json(tasks);
+  });
+app.get('/api/tasks/:taskId', (req, res) => {
+const { taskId } = req.params;
+// Logic to fetch a task by taskId from your database or data source
+const task = { id: taskId, text: 'Sample task' };
+
+if (task) {
+    res.json(task);
+} else {
+    res.status(404).json({ message: 'Task not found' });
+}
+});
 // register view engine
 app.set("view engine", "ejs");
 // app.set("views", "myviews");
