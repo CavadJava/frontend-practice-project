@@ -40,6 +40,9 @@ app.get('/list-users',(req,resp)=>{
 
         resp.end("Name:"+req.query.name+", Age:"+req.query.age);
     })
+    for (const key in req.query) {
+        console.log(key, req.query[key])
+    }
 })
 app.get('/list-users/:name/:age',(req,resp)=>{
     fs.readFile(__dirname+"/"+"users.json",(err,data)=>{
