@@ -16,4 +16,4 @@ http.createServer(function(req,res){
     }
 }).listen(3000)
 
-console.log('Server started on localhost:3000; press Ctrl-C to terminate....');
+console.log('Server started on 65.21.151.194:3000; press Ctrl-C to terminate....');

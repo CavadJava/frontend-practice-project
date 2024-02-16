@@ -47,6 +47,6 @@ const server = http.createServer((req, resp) => {
     });
 });
 
-server.listen(3000, 'localhost', () => {
+server.listen(3000, '65.21.151.194', () => {
     console.log('listening for request on port 3000');
 });

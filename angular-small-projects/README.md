@@ -7,7 +7,7 @@ Node modules doesnt exist in curent folder, You need run `npm install`
 
 ## Development server
 
-Run `ng serve` or `ng serve --port 8081` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` or `ng serve --port 8081` for a dev server. Navigate to `http://65.21.151.194:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

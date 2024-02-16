@@ -18,7 +18,7 @@ export class SellerService {
   constructor(private httpClient: HttpClient, private router: Router) { }
   userSignUp(data: SignUp) {
     console.warn("seller-step1")
-    this.httpClient.post('http://localhost:3000/seller',
+    this.httpClient.post('http://65.21.151.194:3000/seller',
       data, { observe: 'response' })
       .subscribe((result) => {
         if (result) {
@@ -33,7 +33,7 @@ export class SellerService {
   userLogin(data: Login): any {
     console.warn("auth-step3")
     console.warn(data)
-    return this.httpClient.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`
+    return this.httpClient.get(`http://65.21.151.194:3000/seller?email=${data.email}&password=${data.password}`
       , { observe: 'response' });
   }
 
